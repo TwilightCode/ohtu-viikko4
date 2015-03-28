@@ -37,6 +37,7 @@ scenario "user can not login with incorrect password", {
 
     then 'user will not be logged in to system', {
         io.getPrints().shouldHave("wrong username or password")
+        io.getPrints().shouldNotHave("Logged in")
     }
 }
 
@@ -54,5 +55,6 @@ scenario "nonexistent user can not login to ", {
 
     then 'user will not be logged in to system', {
         io.getPrints().shouldHave("wrong username or password")
+        io.getPrints().shouldNotHave("logged in")
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="viitegeneraattoriIO" class="ohtu.verkkokauppa.ViiteGeneraattori">
+    </bean>
+
+    <bean id="KirjanpitoIO" class="ohtu.verkkokauppa.Kirjanpito">
+        
+    </bean>
+
+<bean id="varastoIO" class="ohtu.verkkokauppa.Varasto">
+    <constructor-arg ref="KirjanpitoIO" />
+</bean>
+
+<bean id="pankkiIO" class="ohtu.verkkokauppa.Pankki">
+    <constructor-arg ref="KirjanpitoIO" />
+</bean>
+
+
+<bean id="kauppa" class="ohtu.verkkokauppa.Kauppa">
+    <constructor-arg ref="varastoIO" />
+    <constructor-arg ref="pankkiIO" />
+    <constructor-arg ref="viitegeneraattoriIO" />
+</bean>
+
+</beans>

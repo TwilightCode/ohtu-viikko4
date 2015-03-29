@@ -7,7 +7,7 @@
     <bean id="IO" class="ohtu.io.ConsoleIO">
     </bean>
      
-    <bean id="UserDao" class="ohtu.data_access.InMemoryUserDao">
+    <bean id="UserDao" class="ohtu.data_access.FileUserDao">
     </bean>
     
     <bean id="authenticationService" class="ohtu.services.AuthenticationService">
